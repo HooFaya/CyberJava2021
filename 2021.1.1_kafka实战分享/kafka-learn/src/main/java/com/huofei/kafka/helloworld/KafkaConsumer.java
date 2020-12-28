@@ -17,12 +17,12 @@ import java.util.List;
  */
 @Component
 public class KafkaConsumer {
-    // 消费监听
-    @KafkaListener(topics = {"topic2"})
-    public void onMessage1(ConsumerRecord<?, ?> record) {
-        // 消费的哪个topic、partition的消息,打印出消息内容
-        System.out.println("简单消费：" + record.topic() + "-" + record.partition() + "-" + record.value());
-    }
+//    // 消费监听
+//    @KafkaListener(topics = {"topic1"})
+//    public void onMessage1(ConsumerRecord<?, ?> record) {
+//        // 消费的哪个topic、partition的消息,打印出消息内容
+//        System.out.println("简单消费：" + record.topic() + "-" + record.partition() + "-" + record.value());
+//    }
 //        /**
 //         * @return void
 //         * @Title 指定topic、partition、offset消费
@@ -63,13 +63,13 @@ public class KafkaConsumer {
 //        throw new Exception("批量消费-模拟异常");
 //    }
 
-    /**
-     * @Title 消息转发(to do)
-     * @return void
-     **/
-    @KafkaListener(topics = {"topic1"})
-    @SendTo("topic2")
-    public String onMessage7(ConsumerRecord<?, ?> record) {
-        return record.value()+"-forward message";
-    }
+//    /**
+//     * @Title 消息转发(to do)
+//     * @return void
+//     **/
+//    @KafkaListener(topics = {"topic1"})
+//    @SendTo("topic2")
+//    public String onMessage7(ConsumerRecord<?, ?> record) {
+//        return record.value()+"-forward message";
+//    }
     }

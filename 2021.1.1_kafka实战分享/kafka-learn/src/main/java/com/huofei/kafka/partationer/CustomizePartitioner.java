@@ -17,6 +17,8 @@ public class CustomizePartitioner implements Partitioner {
     public int partition(String topic, Object key, byte[] keyBytes, Object value, byte[] valueBytes, Cluster cluster) {
         // 自定义分区规则(这里假设全部发到0号分区)
         // ......
+        //做市商，会员
+//        return Integer.parseInt((String) key)%2;
         return 1;
     }
     @Override

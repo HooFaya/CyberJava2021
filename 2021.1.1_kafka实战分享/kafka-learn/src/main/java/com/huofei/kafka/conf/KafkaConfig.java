@@ -19,5 +19,4 @@ public class KafkaConfig {
             System.out.println("消费异常："+message.getPayload());
             return null;
         };
-
     }}

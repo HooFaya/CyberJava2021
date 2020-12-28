@@ -25,10 +25,11 @@ public class KafkaProducer {
     public void sendMessage1(@PathVariable("message") String normalMessage) {
 //        kafkaTemplate.send("topic1", normalMessage);
         for (int i = 0; i < 100; i++) {
-            kafkaTemplate.send("topic1", ""+i);
+            kafkaTemplate.send("topic1", ""+i,""+i);
 
         }
     }
+    //自定义分区器，在application.propertise中配置自定义分区器，配置的值就是分区器类的全路径名，
 
     /**
      * 生產回調寫法一
@@ -68,7 +69,6 @@ public class KafkaProducer {
             }
         });
     }
-    //自定义分区器，在application.propertise中配置自定义分区器，配置的值就是分区器类的全路径名，
     /**
      * 事務提交
      */
